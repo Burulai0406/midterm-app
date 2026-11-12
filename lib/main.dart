@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
         title: 'Shop',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
         ),
         home: const MyHomePage(title: 'Products'),
       ),
@@ -46,41 +47,16 @@ class MyHomePage extends StatelessWidget {
           BlocBuilder<CartBloc, CartState>(
             builder: (context, state) {
               int count = state is CartLoaded ? state.totalItems : 0;
-              return Stack(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.shopping_cart),
-                    onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (_) => const CartPage()),
-                    ),
-                  ),
-                  if (count > 0)
-                    Positioned(
-                      right: 6,
-                      top: 6,
-                      child: Container(
-                        padding: const EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        constraints: const BoxConstraints(
-                          minWidth: 16,
-                          minHeight: 16,
-                        ),
-                        child: Text(
-                          '$count',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                ],
+              return TextButton.icon(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const CartPage()),
+                ),
+                icon: const Icon(Icons.shopping_cart, color: Colors.white),
+                label: Text(
+                  '$count',
+                  style: const TextStyle(color: Colors.white),
+                ),
               );
             },
           ),
@@ -92,7 +68,14 @@ class MyHomePage extends StatelessWidget {
             return const Center(child: CircularProgressIndicator());
           }
           if (state is ProductLoaded) {
-            return ListView.builder(
+            return GridView.builder(
+              padding: const EdgeInsets.all(12),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 0.75,
+                crossAxisSpacing: 12,
+                mainAxisSpacing: 12,
+              ),
               itemCount: state.products.length,
               itemBuilder: (context, index) {
                 final p = state.products[index];
