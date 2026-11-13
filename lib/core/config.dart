@@ -1,3 +1,3 @@
 class AppConfig {
-  static const String baseUrl = 'http://localhost:8000';
+  static const String baseUrl = 'http://10.125.1.89:8000';
 }

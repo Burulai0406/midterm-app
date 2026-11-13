@@ -10,6 +10,14 @@ PRODUCTS = [
     {"id": 2, "title": "Eyeshadow Palette", "price": 15.50, "thumbnail": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400"},
     {"id": 3, "title": "Lip Gloss", "price": 5.99, "thumbnail": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=400"},
     {"id": 4, "title": "Face Powder", "price": 12.00, "thumbnail": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400"},
+    {"id": 5, "title": "Blush Palette", "price": 18.50, "thumbnail": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400"},
+    {"id": 6, "title": "Foundation", "price": 22.00, "thumbnail": "https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=400"},
+    {"id": 7, "title": "Concealer", "price": 14.00, "thumbnail": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400"},
+    {"id": 8, "title": "Setting Spray", "price": 16.50, "thumbnail": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=400"},
+    {"id": 9, "title": "Highlighter", "price": 19.00, "thumbnail": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400"},
+    {"id": 10, "title": "Bronzer", "price": 21.50, "thumbnail": "https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=400"},
+    {"id": 11, "title": "Eyebrow Pencil", "price": 7.50, "thumbnail": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400"},
+    {"id": 12, "title": "Primer", "price": 13.00, "thumbnail": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=400"},
 ]
 
 def init_db():
